@@ -1,0 +1,20 @@
+﻿GreenBox
+
+
+winexe
+C#
+.cs
+C:\Users\Sivchik Denis\Desktop\GreenBox\GreenBox\obj\Debug\
+GreenBox
+none
+false
+DEBUG;TRACE
+C:\Users\Sivchik Denis\Desktop\GreenBox\GreenBox\App.xaml
+221732209201
+3-1389642544
+661217374511
+1341300392337
+Controls\CustomMessageBoxYesNo.xaml;Controls\CustomMessageBox.xaml;Controls\Popup.xaml;Controls\SwagTester.xaml;Controls\ToggleButton.xaml;Resources\BrightTheme.xaml;Resources\ElementsTemplates.xaml;Views\AddUserElementWindow.xaml;Views\ForgotPasswordWindow.xaml;Views\ElementInfoCard.xaml;Views\GetHelpWindow.xaml;Views\LoginWindow.xaml;Views\Pages\ConstructorPage.xaml;Views\Pages\HomePage.xaml;Views\Pages\ProjectPage.xaml;Views\CreateProjectWindow.xaml;Views\Pages\SettingsPage.xaml;Views\RegisterWindow.xaml;Views\MainWindow.xaml;Views\ShareSocialNetworkWindow.xaml;Views\SwagTestWindow.xaml;Views\VkWindow.xaml;
+
+True
+

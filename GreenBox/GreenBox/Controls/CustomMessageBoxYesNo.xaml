@@ -1,0 +1,144 @@
+﻿<Window x:Class="GreenBox.Controls.CustomMessageBoxYesNo"
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+        Title="WpfMessageBox" MinHeight="185"
+
+        MinWidth="300" FontFamily="Arial"
+
+     Background="Transparent" 
+     AllowsTransparency="True"   
+
+     SizeToContent="WidthAndHeight" 
+
+     WindowStartupLocation="CenterScreen"  
+
+     ShowInTaskbar="False" ResizeMode="NoResize" 
+
+     WindowStyle="None" Topmost="True">
+    <Border  BorderBrush="LightSlateGray" 
+
+    BorderThickness="0" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Style="{StaticResource CustomMessageBoxBackground}" CornerRadius="10"/>
+
+     
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" 
+
+            MinHeight="40" >
+                <TextBlock HorizontalAlignment="Center" Margin="5,1,0,1" Name="MessageTitle"  
+
+                 TextTrimming="CharacterEllipsis" 
+
+                LineHeight="22" FontSize="18" 
+
+                VerticalAlignment="Center" Foreground="Black"/>
+            </Grid>
+            <Image Name="img" Margin="5" Grid.Row="1" 
+
+            Grid.Column="0" Width="50" 
+
+            Height="50"  Stretch="Fill" />
+            <TextBlock HorizontalAlignment="Center"   
+
+            VerticalAlignment="Center" 
+
+            TextWrapping="Wrap" Name="txtMsg" 
+
+            Grid.Row="1" 
+
+                    Grid.Column="1" FontSize="14" 
+
+                    LineHeight="20"  />
+            <Grid Grid.Row="2" Grid.ColumnSpan="2"  
+
+            Grid.Column="0" >
+                <StackPanel Orientation="Horizontal"  
+
+                HorizontalAlignment="Center" >
+
+                    <Button Height="44"  Name="btnOk" Content="OK" 
+
+                    Margin="0" MinWidth="70" 
+
+                    Click="Button_Click" Foreground="Black" 
+
+                    FontSize="14" 
+
+                            Style="{StaticResource MessageBoxButtonStyle}"     
+
+                             VerticalAlignment="Center" 
+
+                            HorizontalAlignment="Stretch"  
+
+                            VerticalContentAlignment="Center" 
+
+                            HorizontalContentAlignment="Center" />
+                    <Button Width="100" Name="btnYes" Content="Yes"  
+
+                    Margin="0 0 10 10" MinWidth="70" Height="44" 
+
+                    Click="Button_Click" Foreground="Black" FontSize="14" 
+
+                            Style="{StaticResource MessageBoxButtonStyle}"    
+
+                             VerticalAlignment="Center" 
+
+                            HorizontalAlignment="Stretch"  
+
+                            VerticalContentAlignment="Center" 
+
+                            HorizontalContentAlignment="Center"/>
+                    <Button Name="btnNo" Content="No"  
+
+                    Margin="10 0 0 10" Width="100" MinWidth="70" Height="44" 
+
+                    Click="Button_Click" Foreground="Black" 
+
+                    FontSize="14" 
+
+                              Style="{StaticResource MessageBoxButtonStyle}"   
+
+                               VerticalAlignment="Center" 
+
+                              HorizontalAlignment="Stretch"  
+
+                              VerticalContentAlignment="Center" 
+
+                              HorizontalContentAlignment="Center" />
+                    <Button Name="btnCancel" Margin="0" 
+
+                    Content="Cancel" MinWidth="70" 
+
+                    Height="44" Click="Button_Click"
+
+                                Style="{StaticResource MessageBoxButtonStyle}" 
+
+                                Foreground="Black" 
+
+                                 FontSize="14" 
+
+                                VerticalAlignment="Center" 
+
+                                HorizontalAlignment="Stretch" 
+
+                                VerticalContentAlignment="Center" 
+
+                                HorizontalContentAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

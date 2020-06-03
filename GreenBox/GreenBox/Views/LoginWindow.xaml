@@ -1,0 +1,151 @@
+﻿<Window x:Name="ThisWindow" x:Class="GreenBox.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GreenBox.Views"
+        xmlns:sc="clr-namespace:GreenBox"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d" Height="550" Width="350" Style="{StaticResource FontColor}" Icon="../Resources/DefaultImage/GreenBoxLogo1.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Window.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding LogInCommand}" CommandParameter="{Binding ElementName=ThisWindow}"/>
+    </Window.InputBindings>
+
+
+    <Grid>
+        <Grid>
+            <Border Style="{StaticResource LoginBackground}" CornerRadius="10"></Border>
+
+            <StackPanel Margin="50 40 50 20">
+                <Image Source="../Resources/DefaultImage/GreenBoxLogo1.jpg" Width="100" Height="100"/>
+                <Border Margin="0 30 0 0">
+                    <StackPanel>
+                        <TextBlock TextAlignment="Center" FontFamily="Roboto" FontSize="38">Welcome back</TextBlock>
+                        <TextBlock TextAlignment="Center" FontFamily="Roboto" FontSize="14">Enter your credentials to login</TextBlock>
+
+                        <TextBox Text="{Binding Username}">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="BorderBrush" Value="#01FF67"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                                        <Setter Property="BorderBrush" Value="#01FF67"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="FontFamily" Value="Arial"/>
+                                    <Setter Property="Margin" Value="13 20 13 10"></Setter>
+                                    <Setter Property="BorderBrush" Value="#4B4B4B"></Setter>
+                                    <Setter Property="BorderThickness" Value="0 0 0 2"></Setter>
+                                    <Setter Property="Padding" Value="0 5 0 5"></Setter>
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label FontSize="20" Content="Username" Foreground="LightGray" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+
+                        <PasswordBox sc:Secure.BoundPassword = "{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="PasswordBox" FontSize="20">
+                            <PasswordBox.Style>
+                            <Style TargetType="PasswordBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="BorderBrush" Value="#01FF67"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                                        <Setter Property="BorderBrush" Value="#01FF67"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Margin" Value="13 0 13 0"></Setter>
+                                    <Setter Property="BorderBrush" Value="#4B4B4B"></Setter>
+                                    <Setter Property="BorderThickness" Value="0 0 0 2"></Setter>
+                                    <Setter Property="Padding" Value="0 5 0 5"></Setter>
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label FontSize="20" Content="Password" Foreground="LightGray" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+                                        <Trigger Property="sc:Secure.BoundPassword" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="sc:Secure.BoundPassword" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </PasswordBox.Style>
+                        </PasswordBox>
+
+
+                        <TextBlock Margin="10 15" TextAlignment="Center" FontFamily="Roboto" FontSize="14">
+                            <Span TextDecorations="Underline" >
+                                <TextBlock>Forgot password?</TextBlock>
+                                 <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                        <i:InvokeCommandAction CommandParameter="{Binding ElementName=ThisWindow}" Command="{Binding ReferenceCommand2}"/>
+                                    </i:EventTrigger>
+                                 </i:Interaction.Triggers>
+                            </Span>
+                        </TextBlock>
+
+                        <Button Command="{Binding LogInCommand}" CommandParameter="{Binding ElementName=ThisWindow}" Height="44" Content="Login" FontSize="20" Margin="10 30 10 0" Style="{DynamicResource RoundButtonTemplate}"></Button>
+
+                        <TextBlock Margin="10 15" TextAlignment="Center" FontFamily="Roboto" FontSize="14">Don’t have an account?
+                            <Span TextDecorations="Underline">
+                                <TextBlock>Sign up</TextBlock>
+                                   <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                        <i:InvokeCommandAction CommandParameter="{Binding ElementName=ThisWindow}" Command="{Binding ReferenceCommand1}"/>
+                                    </i:EventTrigger>
+                                 </i:Interaction.Triggers>
+                            </Span>
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
